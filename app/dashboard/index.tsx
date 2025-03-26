@@ -2,6 +2,7 @@ import React from "react";
 import { SafeAreaView, View, Text, TextInput, TouchableOpacity, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Image } from "expo-image";
+import { Link } from "expo-router";
 
 export default function HomeScreen() {
   return (
@@ -123,20 +124,24 @@ export default function HomeScreen() {
       </ScrollView>
       <View className="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex-row justify-around items-center py-3">
         <TouchableOpacity className="items-center">
-          <Ionicons name="home" size={24} color="#14213D" />
-          <Text className="text-xs text-[#14213D]">Home</Text>
+          <Link href={"/dashboard"}>
+            <Ionicons name="home" size={24} color="#14213D" />
+          </Link>
         </TouchableOpacity>
         <TouchableOpacity className="items-center">
-          <Ionicons name="search" size={24} color="#999" />
-          <Text className="text-xs text-gray-500">Explore</Text>
+          <Link href={"/dashboard/search"}>
+            <Ionicons name="search" size={24} color="#999" />
+          </Link>
         </TouchableOpacity>
         <TouchableOpacity className="items-center">
-          <Ionicons name="heart-outline" size={24} color="#999" />
-          <Text className="text-xs text-gray-500">Favorites</Text>
+          <Link href={"/dashboard/order-success"}>
+            <Ionicons name="heart-outline" size={24} color="#999" />
+          </Link>
         </TouchableOpacity>
         <TouchableOpacity className="items-center">
-          <Ionicons name="person-outline" size={24} color="#999" />
-          <Text className="text-xs text-gray-500">Profile</Text>
+          <Link href={"/dashboard/profile"}>
+            <Ionicons name="person-outline" size={24} color="#999" />
+          </Link>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
